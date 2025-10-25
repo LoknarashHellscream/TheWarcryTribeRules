@@ -61,6 +61,9 @@ body {
   list-style: none;
   padding: 0;
   margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .sidebar-nav li {
@@ -164,14 +167,23 @@ main.content {
   text-shadow: 0 0 6px rgba(169, 50, 38, 0.45);
 }
 
-.btn-accent {
+.btn-accent,
+.btn-discord,
+.btn-wow,
+.btn-raid,
+.btn-logs {
   display: inline-block;
   padding: 10px 16px;
-  background: var(--accent);
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 700;
+  margin: 4px 0;
+  transition: background 0.2s ease;
+}
+
+.btn-accent {
+  background: var(--accent);
 }
 
 .btn-accent:hover {
@@ -179,14 +191,7 @@ main.content {
 }
 
 .btn-discord {
-  display: inline-block;
-  padding: 10px 16px;
   background: #7289da;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background 0.2s ease;
 }
 
 .btn-discord:hover {
@@ -195,13 +200,6 @@ main.content {
 
 .btn-wow {
   background: #2980b9;
-  display: inline-block;
-  padding: 10px 16px;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background 0.2s ease;
 }
 
 .btn-wow:hover {
@@ -210,13 +208,6 @@ main.content {
 
 .btn-raid {
   background: #d35400;
-  display: inline-block;
-  padding: 10px 16px;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background 0.2s ease;
 }
 
 .btn-raid:hover {
@@ -225,13 +216,6 @@ main.content {
 
 .btn-logs {
   background: #8e44ad;
-  display: inline-block;
-  padding: 10px 16px;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background 0.2s ease;
 }
 
 .btn-logs:hover {
@@ -279,58 +263,6 @@ main.content {
   to {
     opacity: 1;
     transform: none;
-  }
-}
-
-@media (max-width:900px) {
-  :root {
-    --sidebar-width: 100%;
-  }
-
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    gap: 10px;
-    padding: 12px;
-    align-items: center;
-    border-right: none;
-    border-bottom: 1px solid rgba(169, 50, 38, 0.3);
-  }
-
-  .sidebar-top {
-    order: -1;
-    margin: 0 12px 0 0;
-  }
-
-  .sidebar-logo {
-    width: 56px;
-  }
-
-  .sidebar-nav {
-    display: flex;
-    gap: 6px;
-  }
-
-  .nav-link {
-    padding: 8px 10px;
-    border-left: none;
-    border-radius: 6px;
-  }
-
-  .hero {
-    margin-left: 0;
-    padding: 60px 16px 30px;
-  }
-
-  main.content {
-    margin-left: 0;
-    padding: 20px;
-  }
-
-  .footer {
-    margin-left: 0;
   }
 }
 
@@ -384,7 +316,99 @@ main.content {
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 100%;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    gap: 10px;
+    padding: 12px;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid rgba(169, 50, 38, 0.3);
+  }
+
+  .sidebar-top {
+    order: -1;
+    margin: 0 12px 0 0;
+  }
+
+  .sidebar-logo {
+    width: 56px;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+    border-left: none;
+    border-radius: 6px;
+  }
+
+  .hero {
+    margin-left: 0;
+    padding: 60px 16px 30px;
+  }
+
+  main.content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .footer {
+    margin-left: 0;
+  }
+
+  .section-card {
+    max-width: 95%;
+    padding: 18px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .progress-bg {
+    height: 22px;
+  }
+
+  .progress-text {
+    font-size: 0.9rem;
+  }
+
+  .btn-accent,
+  .btn-discord,
+  .btn-wow,
+  .btn-raid,
+  .btn-logs {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    margin: 3px 0;
+  }
 }
