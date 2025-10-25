@@ -24,3 +24,15 @@
   window.addEventListener('resize', onScroll);
   onScroll();
 })();
+
+window.addEventListener('DOMContentLoaded', () => {
+  const raidBars = document.querySelectorAll('.raid-progress');
+  raidBars.forEach(bar => {
+    const progress = bar.dataset.progress;
+    const fill = bar.querySelector('.progress-fill');
+    const text = bar.querySelector('.progress-text');
+    setTimeout(() => {
+      fill.style.width = progress + '%';
+    }, 100);
+  });
+});
