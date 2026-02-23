@@ -412,3 +412,290 @@ main.content {
     margin: 3px 0;
   }
 }
+
+.recruitment-card img {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+
+.spec {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+.priority {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.recruitment-card.high {
+  border-color: #2ecc71;
+  box-shadow: 0 0 12px rgba(46, 204, 113, 0.25);
+}
+
+.recruitment-card.high .priority {
+  background: #2ecc71;
+}
+
+.recruitment-card.medium {
+  border-color: #f39c12;
+}
+
+.recruitment-card.medium .priority {
+  background: #f39c12;
+}
+
+.recruitment-card.closed {
+  border-color: #e74c3c;
+  opacity: 0.6;
+}
+
+.recruitment-card.closed .priority {
+  background: #e74c3c;
+  color: white;
+}
+
+.recruitment-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.deathknight .class-title { color: #C41F3B; }
+.warrior .class-title     { color: #C79C6E; }
+.priest .class-title      { color: #FFFFFF; }
+.mage .class-title        { color: #69CCF0; }
+.hunter .class-title      { color: #ABD473; }
+.rogue .class-title       { color: #FFF569; }
+.warlock .class-title     { color: #9482C9; }
+.druid .class-title       { color: #FF7D0A; }
+.paladin .class-title     { color: #F58CBA; }
+.shaman .class-title      { color: #0070DE; }
+.monk .class-title        { color: #00FF96; }
+.demonhunter .class-title { color: #A330C9; }
+.evoker .class-title      { color: #33937F; }
+
+@media (max-width: 600px) {
+
+  .recruitment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recruitment-card {
+    padding: 14px;
+  }
+
+  .recruitment-card img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .spec {
+    font-size: 0.95rem;
+  }
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.role-icon {
+  width: 10px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.role-icon.tank {
+  background: #3498db;
+}
+
+.role-icon.healer {
+  background: #2ecc71;
+}
+
+.role-icon.dps {
+  background: #e74c3c;
+}
+
+.toggle-btn {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.recruitment-card[data-state="open"] .toggle-btn {
+  background: #2ecc71;
+  color: #000;
+}
+
+.recruitment-card[data-state="closed"] .toggle-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.recruitment-card[data-state="closed"] {
+  opacity: 0.6;
+}
+
+#recruitmentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.class-block {
+  width: 100%;
+}
+
+.class-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 6px;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.spec-card {
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.spec-card:hover {
+  transform: translateY(-4px);
+  background: #202020;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+.spec-card img {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.spec-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.spec-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.spec-card.high {
+  border-color: #2ecc71;
+}
+
+.spec-card.high:hover {
+  box-shadow: 0 0 12px rgba(46,204,113,0.4);
+}
+
+.spec-card.medium {
+  border-color: #f39c12;
+}
+
+.spec-card.medium:hover {
+  box-shadow: 0 0 12px rgba(243,156,18,0.4);
+}
+
+.spec-card.closed {
+  border-color: #e74c3c;
+  opacity: 0.75;
+}
+
+.spec-card.closed:hover {
+  box-shadow: 0 0 12px rgba(231,76,60,0.4);
+}
+
+.priority {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.spec-card.high .priority {
+  background: #2ecc71;
+}
+
+.spec-card.medium .priority {
+  background: #f39c12;
+}
+
+.spec-card.closed .priority {
+  background: #e74c3c;
+}
+
+@media (max-width: 1200px) {
+  .spec-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .spec-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+}

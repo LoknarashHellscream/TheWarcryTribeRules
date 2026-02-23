@@ -1,0 +1,24 @@
+[
+  {
+    "class": "death knight",
+    "specs": [
+      { "name": "Frost",  "role": "dps", "priority": "high", "spots": 1, "maxSpots": 2, "icon": "images/deathknight-frost.jpg" },
+      { "name": "Unholy", "role": "dps", "priority": "high", "spots": 1, "maxSpots": 2, "icon": "images/deathknight-unholy.jpg" }
+    ]
+  },
+  {
+    "class": "priest",
+    "specs": [
+      { "name": "Holy",       "role": "healer", "priority": "high", "spots": 1, "maxSpots": 1, "icon": "images/priest-holy.jpg" },
+      { "name": "Discipline", "role": "healer", "priority": "high", "spots": 1, "maxSpots": 1, "icon": "images/priest-discipline.jpg" },
+      { "name": "Shadow",     "role": "dps",    "priority": "high", "spots": 1, "maxSpots": 1, "icon": "images/priest-shadow.jpg" }
+    ]
+  },
+  {
+    "class": "druid",
+    "specs": [
+      { "name": "Balance",     "role": "dps",    "priority": "high", "spots": 1, "maxSpots": 1, "icon": "images/druid-balance.jpg" },
+      { "name": "Restoration", "role": "healer", "priority": "high", "spots": 1, "maxSpots": 1, "icon": "images/druid-restoration.jpg" }
+    ]
+  }
+]
