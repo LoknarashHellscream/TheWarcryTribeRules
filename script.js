@@ -68,7 +68,6 @@ function buildGrid(data) {
         <img src="${spec.icon}" alt="${spec.name}">
         <div class="spec-info">
           <span class="spec-name">${spec.name}</span>
-          <span class="meta">${spec.spots}/${spec.maxSpots}</span>
         </div>
         <span class="priority">${state.toUpperCase()}</span>
       `;
@@ -77,4 +76,5 @@ function buildGrid(data) {
 
     grid.appendChild(classBlock);
   });
+
 }
