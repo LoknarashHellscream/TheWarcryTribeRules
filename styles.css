@@ -5,6 +5,26 @@
   --accent: #a93226;
   --accent-strong: rgba(169, 50, 38, 0.15);
   --sidebar-width: 220px;
+
+  /* Extended color tokens */
+  --sidebar-bg: #141414;
+  --footer-bg: #151515;
+  --card-bg: #1a1a1a;
+  --surface-2: #333;
+  --text: #e0e0e0;
+  --accent-60: rgba(169, 50, 38, 0.6);
+  --accent-45: rgba(169, 50, 38, 0.45);
+  --accent-30: rgba(169, 50, 38, 0.3);
+  --hero-gradient-end: #181818;
+
+  /* Z-index scale */
+  --z-below: -1;
+  --z-base: 1;
+  --z-overlay: 2;
+  --z-sidebar: 1000;
+  --z-tooltip: 1010;
+  --z-modal: 2000;
+  --z-skip: 9999;
 }
 
 @font-face {
@@ -21,7 +41,7 @@ body {
   padding: 0;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--bg);
-  color: #e0e0e0;
+  color: var(--text);
   scroll-behavior: smooth;
   overflow-x: hidden;
   min-height: 100vh;
@@ -35,13 +55,13 @@ body {
   top: 0;
   width: var(--sidebar-width);
   height: 100%;
-  background: #141414;
-  border-right: 2px solid rgba(169, 50, 38, 0.6);
+  background: var(--sidebar-bg);
+  border-right: 2px solid var(--accent-60);
   padding: 22px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1000;
+  z-index: var(--z-sidebar);
 }
 
 .sidebar-top {
@@ -103,8 +123,8 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #222, #181818);
-  z-index: -1;
+  background: linear-gradient(180deg, var(--panel), var(--hero-gradient-end));
+  z-index: var(--z-below);
 }
 
 .hero-inner {
@@ -155,7 +175,7 @@ main.content {
 .section-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(169, 50, 38, 0.3);
+  border: 1px solid var(--accent-30);
 }
 
 .section-card h2 {
@@ -164,7 +184,7 @@ main.content {
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   font-size: 1.4rem;
   color: #fff;
-  text-shadow: 0 0 6px rgba(169, 50, 38, 0.45);
+  text-shadow: 0 0 6px var(--accent-45);
 }
 
 .btn-accent,
@@ -229,7 +249,7 @@ main.content {
   text-align: center;
   color: var(--muted);
   border-top: 1px solid rgba(255, 255, 255, 0.02);
-  background: #151515;
+  background: var(--footer-bg);
 }
 
 .fade-page {
@@ -272,7 +292,7 @@ main.content {
 
 .progress-container {
   width: 100%;
-  background-color: #222;
+  background-color: var(--panel);
   border-radius: 8px;
   overflow: hidden;
   margin-top: 8px;
@@ -282,7 +302,7 @@ main.content {
 .progress-bg {
   width: 100%;
   height: 28px;
-  background-color: #333;
+  background-color: var(--surface-2);
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -300,7 +320,7 @@ main.content {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: var(--z-base);
   border-radius: 6px 0 0 6px;
 }
 
@@ -311,7 +331,7 @@ main.content {
   line-height: 24px;
   color: white;
   font-weight: bold;
-  z-index: 2;
+  z-index: var(--z-overlay);
   pointer-events: none;
 }
 
@@ -343,7 +363,7 @@ main.content {
     padding: 12px;
     align-items: center;
     border-right: none;
-    border-bottom: 1px solid rgba(169, 50, 38, 0.3);
+    border-bottom: 1px solid var(--accent-30);
   }
 
   .sidebar-top {
@@ -413,24 +433,6 @@ main.content {
   }
 }
 
-.recruitment-card img {
-  width: 54px;
-  height: 54px;
-  border-radius: 10px;
-  border: 2px solid #000;
-}
-
-.spec {
-  font-weight: 700;
-  font-size: 1.05rem;
-}
-
-.role {
-  font-size: 0.8rem;
-  color: #aaa;
-  letter-spacing: 1px;
-}
-
 .priority {
   position: absolute;
   top: 10px;
@@ -441,39 +443,6 @@ main.content {
   border-radius: 20px;
   letter-spacing: 1px;
   color: #000;
-}
-
-.recruitment-card.high {
-  border-color: #2ecc71;
-  box-shadow: 0 0 12px rgba(46, 204, 113, 0.25);
-}
-
-.recruitment-card.high .priority {
-  background: #2ecc71;
-}
-
-.recruitment-card.medium {
-  border-color: #f39c12;
-}
-
-.recruitment-card.medium .priority {
-  background: #f39c12;
-}
-
-.recruitment-card.closed {
-  border-color: #e74c3c;
-  opacity: 0.6;
-}
-
-.recruitment-card.closed .priority {
-  background: #e74c3c;
-  color: white;
-}
-
-.recruitment-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
 .deathknight .class-title { color: #C41F3B; }
@@ -494,19 +463,6 @@ main.content {
 
   .recruitment-grid {
     grid-template-columns: 1fr;
-  }
-
-  .recruitment-card {
-    padding: 14px;
-  }
-
-  .recruitment-card img {
-    width: 44px;
-    height: 44px;
-  }
-
-  .spec {
-    font-size: 0.95rem;
   }
 }
 
@@ -533,29 +489,6 @@ main.content {
   background: #e74c3c;
 }
 
-.toggle-btn {
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.recruitment-card[data-state="open"] .toggle-btn {
-  background: #2ecc71;
-  color: #000;
-}
-
-.recruitment-card[data-state="closed"] .toggle-btn {
-  background: #e74c3c;
-  color: white;
-}
-
-.recruitment-card[data-state="closed"] {
-  opacity: 0.6;
-}
 
 #recruitmentGrid {
   display: flex;
@@ -575,6 +508,7 @@ main.content {
   letter-spacing: 2px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 6px;
+  text-transform: uppercase;
 }
 
 .spec-grid {
@@ -585,7 +519,7 @@ main.content {
 }
 
 .spec-card {
-  background: #1a1a1a;
+  background: var(--card-bg);
   border: 2px solid #2a2a2a;
   border-radius: 12px;
   padding: 14px;
@@ -699,3 +633,74 @@ main.content {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== List spacing in rule sections (replaces removed </br> tags) ===== */
+#general li,
+#raidgroup li,
+#boe li {
+  margin-bottom: 12px;
+}
+
+/* ===== Screen-reader only helper ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== Skip navigation link (accessibility) ===== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  z-index: var(--z-skip);
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 10px;
+}
+
+/* ===== Focus-visible styles ===== */
+.nav-link:focus-visible,
+.btn-accent:focus-visible,
+.btn-discord:focus-visible,
+.btn-wow:focus-visible,
+.btn-raid:focus-visible,
+.btn-logs:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.spec-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== Recruitment loading / error states ===== */
+.recruitment-loading,
+.recruitment-error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+.recruitment-loading {
+  color: var(--muted);
+}
+
+.recruitment-error {
+  color: #e74c3c;
+}
+

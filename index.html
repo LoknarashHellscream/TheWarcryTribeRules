@@ -4,32 +4,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="The Warcry Tribe — gildia World of Warcraft na Burning Legion (Horde). PvE, Heroic i Mythic. Wt/Czw 20:00–23:00. Szukamy aktywnych graczy.">
+  <meta property="og:title" content="The Warcry Tribe">
+  <meta property="og:description" content="Gildia WoW na Burning Legion (Horde). Progress Heroic i Mythic. Gramy wt/czw 20:00–23:00. Dołącz do nas!">
+  <meta property="og:image" content="images/guild-logo.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <title>The Warcry Tribe</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="images/guild-logo.png" type="image/png">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/guild-logo.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="images/guild-logo.png">
 </head>
 
 <body class="fade-page">
 
-  <nav class="sidebar">
-    <div class="sidebar-top">
-      <img src="images/guild-logo.png" alt="Logo gildii" class="sidebar-logo">
-    </div>
-    <ul class="sidebar-nav">
-      <li><a href="index.html" class="nav-link active">Strona główna</a></li>
-      <li><a href="rules.html" class="nav-link fade-link">Regulamin</a></li>
-    </ul>
-  </nav>
+  <a href="#main-content" class="skip-link">Przejdź do treści</a>
 
-  <header class="hero">
+  <div id="sidebar-mount"></div>
+
+  <header class="hero" aria-labelledby="hero-title">
     <div class="hero-bg"></div>
     <div class="hero-inner">
-      <h1 class="hero-title">The Warcry Tribe</h1>
+      <h1 class="hero-title" id="hero-title">The Warcry Tribe</h1>
       <p class="subtitle">Horde • PvE • Burning Legion • Est. 2021</p>
     </div>
   </header>
 
-  <main class="content">
+  <main class="content" id="main-content">
     <section class="section-card">
       <h2>Witamy w naszej gildii</h2>
       <p>
@@ -81,65 +83,68 @@
 
     <section class="section-card recruitment-section">
       <h2>Kogo szukamy?</h2>
-      <div class="recruitment-grid" id="recruitmentGrid"></div>
+      <div class="recruitment-grid" id="recruitmentGrid" aria-busy="true"></div>
     </section>
 
     <section class="section-card" id="raid-progress-section">
       <h2>Nasz progress w tym dodatku:</h2>
 
-      <div class="raid-progress" data-progress="100">
+      <div class="raid-progress" data-progress="100" data-label="8/8 HC" data-raid-slug="manaforge-omega" data-difficulty="heroic">
         <h3>Manaforge Omega</h3>
         <div class="progress-container">
           <div class="progress-bg">
             <div class="progress-fill"></div>
-            <span class="progress-text">8/8 HC</span>
+            <span class="progress-text"></span>
           </div>
         </div>
       </div>
 
-      <div class="raid-progress" data-progress="38">
+      <div class="raid-progress" data-progress="38" data-label="3/8 M" data-raid-slug="manaforge-omega" data-difficulty="mythic">
+        <h3 class="sr-only">Manaforge Omega — Mythic</h3>
         <div class="progress-container">
           <div class="progress-bg">
             <div class="progress-fill"></div>
-            <span class="progress-text">3/8 M</span>
+            <span class="progress-text"></span>
           </div>
         </div>
       </div>
 
-      <div class="raid-progress" data-progress="100">
+      <div class="raid-progress" data-progress="100" data-label="8/8 HC" data-raid-slug="liberation-of-undermine" data-difficulty="heroic">
         <h3>Liberation of Undermine</h3>
         <div class="progress-container">
           <div class="progress-bg">
             <div class="progress-fill"></div>
-            <span class="progress-text">8/8 HC</span>
+            <span class="progress-text"></span>
           </div>
         </div>
       </div>
 
-      <div class="raid-progress" data-progress="38">
+      <div class="raid-progress" data-progress="38" data-label="3/8 M" data-raid-slug="liberation-of-undermine" data-difficulty="mythic">
+        <h3 class="sr-only">Liberation of Undermine — Mythic</h3>
         <div class="progress-container">
           <div class="progress-bg">
             <div class="progress-fill"></div>
-            <span class="progress-text">3/8 M</span>
+            <span class="progress-text"></span>
           </div>
         </div>
       </div>
 
-      <div class="raid-progress" data-progress="100">
+      <div class="raid-progress" data-progress="100" data-label="8/8 HC" data-raid-slug="nerubar-palace" data-difficulty="heroic">
         <h3>Nerub-ar Palace</h3>
         <div class="progress-container">
           <div class="progress-bg">
             <div class="progress-fill"></div>
-            <span class="progress-text">8/8 HC</span>
+            <span class="progress-text"></span>
           </div>
         </div>
       </div>
 
-      <div class="raid-progress" data-progress="38">
+      <div class="raid-progress" data-progress="38" data-label="3/8 M" data-raid-slug="nerubar-palace" data-difficulty="mythic">
+        <h3 class="sr-only">Nerub-ar Palace — Mythic</h3>
         <div class="progress-container">
           <div class="progress-bg">
             <div class="progress-fill"></div>
-            <span class="progress-text">3/8 M</span>
+            <span class="progress-text"></span>
           </div>
         </div>
       </div>
@@ -155,10 +160,11 @@
   </main>
 
   <footer class="footer">
-    <p>© 2026 The Warcry Tribe | Ostatnia aktualizacja: 23 lutego 2026</p>
+    <p>© 2026 The Warcry Tribe | Ostatnia aktualizacja: 26 lutego 2026</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="script.js" defer></script>
 
 </body>
 
